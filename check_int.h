@@ -157,7 +157,7 @@ result = atoi(s);
 // printf("result %d--------\n", result); //debug
 // printf("bil_0 %d--------\n", bil_0); //debug
 
-if (bil_0 == 1 && result <= 0)
+if (error == 0 && bil_0 == 1 && result <= 0)
 	{
 		printf("\r\n%s \"%s\" не може дорівнювати, або бути меншим нулю!\r\n\n", Error, printf_x);
 		error = 1;
