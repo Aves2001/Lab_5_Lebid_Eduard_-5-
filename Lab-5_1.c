@@ -6,15 +6,9 @@ int main(void) {
 set_chcp();
 
 int size = 0;
-do{
+
 printf("\r\nВведіть розмір масивів: a, b, c.\r\n\n");
-size = scanf_check_int (0, "Розмір", 0, 0);
-	
-	if (size <=0)
-	{
-		printf("\r\n%sРозмір масивів не може дорівнювати, або бути меншим нулю!\r\n", Error);
-	}
-}while(size < 1);
+size = scanf_check_int (0, "Розмір", 0, 0, bil_0 = 1);
 
 int	a[size];
 int b[size];

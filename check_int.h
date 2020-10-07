@@ -1,12 +1,11 @@
 #include <math.h>
-
 // char debug = 1;
-
+char bil_0 = 0;
 //					   lvl	text   i  j
 //				      [0-2]
 // x = scanf_check_int (0, "text", 0, 0);
 
-int scanf_check_int (char lvl, char printf_x[], int massiv_i, int massiv_j)
+int scanf_check_int (char lvl, char printf_x[], int massiv_i, int massiv_j, ...)
 {
 #define N 13
 #define Error "\a[Error] "
@@ -154,6 +153,15 @@ for (int i = 0; i < N; i++)
 										}
 	}
 
+result = atoi(s);
+// printf("result %d--------\n", result); //debug
+// printf("bil_0 %d--------\n", bil_0); //debug
+
+if (bil_0 == 1 && result <= 0)
+	{
+		printf("\r\n%s \"%s\" не може дорівнювати, або бути меншим нулю!\r\n\n", Error, printf_x);
+		error = 1;
+	}
 }while (error == 1);
 
 
@@ -164,8 +172,7 @@ for (int i = 0; i < N; i++)
 // } //debug
 // printf("\r\n\n"); //debug
 
-result = atoi(s);
 // printf("----|scanf_check_int| result = %d |-----\n", result); //debug
-
+bil_0 = 0;
 return result;
 }

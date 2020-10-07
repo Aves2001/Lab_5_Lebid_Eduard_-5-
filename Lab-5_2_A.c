@@ -6,15 +6,9 @@ int main(void) {
 set_chcp();
 
 int size = 0;
-do{
-printf("\r\nВведіть розмір масивів:\r\n\n");
-size = scanf_check_int (0, "Розмір", 0, 0);
-	
-	if (size <=0)
-	{
-		printf("\r\n%sРозмір масива не може дорівнювати, або бути меншим нулю!\r\n\n", Error);
-	}
-}while(size < 1);
+
+printf("\r\nВведіть розмір масива:\r\n\n");
+size = scanf_check_int (0, "Розмір", 0, 0, bil_0 = 1);
 
 int	n[size];
 
@@ -27,15 +21,23 @@ printf("\r\n");
 	printf("\r\n");
 
 int max = n[0];
+int max_i = 0;
 	for (int i = 0; i < size; i++)
 	{
 		if (n[i] > max)
 		{
 			max = n[i];
+			max_i = i;
 		}
 	}
 
-	printf("\r\n1) Максимальний елемент масиву: %d\r\n", max);
+		printf("\r\n Введений масив:\r\n\n");
+		for (int i = 0; i < size; i++)
+		{
+		printf("n[%d] = %d \t", i, n[i]); printf("\r\n");
+		}
+
+	printf("\r\n1) Максимальний елемент масиву: n[%d] = %d\r\n", max_i, max);
 
 
 int d_1 = -1, d_2 = -1, summ = 0;
@@ -66,12 +68,12 @@ if (d_1 != -1 && d_2 != -1)
 		{
 			summ += n[d_1];
 		}
-			printf("\r\n2) Сумма елементів масиву,\n   розташованих між першим й другим\n   додатними елементами: %d\r\n", summ);
+			printf("\r\n2) Сумма елементів масиву,\n   розташованих між першим і другим\n   додатними елементами: %d\r\n", summ);
 
 }else	if (d_1 != -1 && d_2 == -1)
 		{
-			printf("\r\n2) В масиві тільке одне додатнє число\r\n");
-		} else printf("\r\n2) В масиві немає додатніх чисел\r\n");
+			printf("\r\n2) В масиві тільке одне додатне число\r\n");
+		} else printf("\r\n2) В масиві немає додатних чисел\r\n");
 
 
 

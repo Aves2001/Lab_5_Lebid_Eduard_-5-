@@ -3,23 +3,15 @@
 #include "check_int.h"
 #include <time.h>
 
-#define Low -100
-#define High 100
+const int Low = -100, High = 100;
 
 int main(void) {
 set_chcp();
 
 int n = 0;
 
-do{
 printf("\r\nВведіть розмір масива:\r\n");
-n = scanf_check_int (0, "Розмір", 0, 0);
-
-	if (n <= 0)
-	{
-		printf("\r\n%sРозмір масива не може дорівнювати, або бути меншим нулю!\r\n", Error);
-	}
-}while(n <= 0);
+n = scanf_check_int (0, "Розмір", 0, 0, bil_0 = 1);
 
 double A[n][n];
 srand(time(0));
